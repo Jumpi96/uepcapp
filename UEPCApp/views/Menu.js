@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ImageBackground, StyleSheet, Linking } from 'react-native';
+import { View, StyleSheet, Linking } from 'react-native';
 import { Button } from 'react-native-elements';
 
 class Menu extends React.Component {
@@ -13,22 +13,17 @@ class Menu extends React.Component {
   }
   render() {
     return (
-      <View style={{flex: 1}}>
-        <ImageBackground
-          resizeMode={'stretch'}
-          style={{flex: 1}}
-          source={require('../assets/background.png')}
-        >
-          <View style={styles.button}>
-            <Button
-              raised
-              icon={{name: 'money', type: 'font-awesome'}}
-              title='Simulador salarial'
-              backgroundColor='#437CF5'
-              onPress={() => this.openURL('http://servicios.uepc.org.ar/NuevoSimulador/Default.aspx')}
-            />
-          </View>
-        </ImageBackground>
+      <View style={styles.container}>
+        <View style={styles.button}>
+          <Button
+            raised
+            icon={{name: 'money', type: 'font-awesome', color: 'white'}}
+            title='Simulador Salarial'
+            backgroundColor='#2387D1'
+            color='white'
+            onPress={() => this.openURL('http://servicios.uepc.org.ar/NuevoSimulador/Default.aspx')}
+          />
+        </View>
       </View>
     );
   }
@@ -36,6 +31,10 @@ class Menu extends React.Component {
 
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
   button: {
     marginTop: 5,
   }
